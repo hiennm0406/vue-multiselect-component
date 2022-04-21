@@ -795,6 +795,7 @@ var script = {
         this.$emit('close');
         this.isOpen = false;
         this.inputValue = '';
+        this.searchValue = '';
       }
     },
 
@@ -821,6 +822,8 @@ var script = {
       } else {
         this.selectItem(id);
       }
+        this.searchValue = '';
+        this.closeOptions();
     },
 
     removeItem(id) {
@@ -946,7 +949,7 @@ var __vue_render__ = function () {
     }
   }), _vm._v(" "), _vm.value.length > _vm.limit && !_vm.isOpen ? _c('span', {
     staticClass: "vue2-input-info"
-  }, [_vm._v("\n        and " + _vm._s(_vm.value.length - _vm.limit) + " more\n      ")]) : _vm._e()], 2), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n        Đã chọn " + _vm._s(_vm.value.length) + " \n      ")]) : _vm._e()], 2), _vm._v(" "), _c('div', {
     staticClass: "vue2-actions"
   }, [_vm.value.length ? _c('button', {
     staticClass: "vue2-action",
@@ -1015,7 +1018,7 @@ var __vue_staticRenderFns__ = [];
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
   inject("data-v-837aafce_0", {
-    source: "@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);*,::after,::before{margin:0;padding:0;box-sizing:border-box;font-family:\"Open Sans\",sans-serif}.vue2-multi-select-wrap{position:relative}.vue2-multi-select{width:100%;border:1px solid #ccd4dd;border-radius:5px;padding:0 5px 5px 5px;cursor:text;display:flex}.vue2-multi-select.as-label{padding:3px 5px 5px 5px}.vue2-multi-select.vue2-open{border-radius:5px 5px 0 0}.vue2-multi-select .vue2-value-items{display:flex;flex-wrap:wrap;width:calc(100% - 50px);position:relative}.vue2-multi-select .vue2-value-items .vue2-transition-list{display:flex;flex-wrap:wrap}.vue2-multi-select .vue2-value-items .vue2-placeholder{position:absolute;margin-left:5px;z-index:-1;transition:.25s;top:0}.vue2-multi-select .vue2-value-items .vue2-placeholder.active{top:-17px;line-height:14px;font-size:13px;background-color:#fff;padding:0 2px;z-index:5}.vue2-multi-select .vue2-value-items .vue2-input-info{cursor:pointer}.vue2-multi-select .vue2-value-items .vue2-input-info,.vue2-multi-select .vue2-value-items .vue2-placeholder{line-height:28px;margin-top:5px;font-size:14px;color:#a7a7a7;user-select:none}.vue2-multi-select .vue2-actions{width:50px;padding-top:5px;display:flex;justify-content:flex-end}.vue2-multi-select .vue2-actions .vue2-action{height:100%;width:25px;border:none;background-color:transparent;border-radius:0;cursor:pointer}.vue2-multi-select .vue2-actions .vue2-action .dropdown{width:11px}",
+    source: "vue2-multi-select-wrap{*,::after,::before{margin:0;padding:0;box-sizing:border-box;}}.vue2-multi-select-wrap{position:relative}.vue2-multi-select{width:100%;border:1px solid #ccd4dd;border-radius:5px;padding:0 5px 5px 5px;cursor:text;display:flex}.vue2-multi-select.as-label{padding:3px 5px 5px 5px}.vue2-multi-select.vue2-open{border-radius:5px 5px 0 0}.vue2-multi-select .vue2-value-items{display:flex;flex-wrap:wrap;width:calc(100% - 50px);position:relative}.vue2-multi-select .vue2-value-items .vue2-transition-list{display:flex;flex-wrap:wrap}.vue2-multi-select .vue2-value-items .vue2-placeholder{position:absolute;margin-left:5px;z-index:-1;transition:.25s;top:0}.vue2-multi-select .vue2-value-items .vue2-placeholder.active{top:-17px;line-height:14px;font-size:13px;background-color:#fff;padding:0 2px;z-index:5}.vue2-multi-select .vue2-value-items .vue2-input-info{cursor:pointer}.vue2-multi-select .vue2-value-items .vue2-input-info,.vue2-multi-select .vue2-value-items .vue2-placeholder{line-height:28px;margin-top:5px;font-size:14px;color:#a7a7a7;user-select:none}.vue2-multi-select .vue2-actions{width:50px;padding-top:5px;display:flex;justify-content:flex-end}.vue2-multi-select .vue2-actions .vue2-action{height:100%;width:25px;border:none;background-color:transparent;border-radius:0;cursor:pointer}.vue2-multi-select .vue2-actions .vue2-action .dropdown{width:11px}",
     map: undefined,
     media: undefined
   });

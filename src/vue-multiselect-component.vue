@@ -141,7 +141,8 @@ export default {
       if (this.isOpen) {
         this.$emit('close')
         this.isOpen = false
-        this.inputValue = ''
+        this.inputValue = '';
+        this.searchValue = '';
       }
     },
     openOptions() {
@@ -165,6 +166,8 @@ export default {
       } else {
         this.selectItem(id)
       }
+      this.searchValue = '';
+      this.closeOptions();
     },
     removeItem(id) {
       const index = this.internalValue.findIndex(itemId => itemId === id)
@@ -214,16 +217,15 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+vue2-multi-select-wrap {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
-
 .vue2-multi-select-wrap {
   position: relative;
 }
